@@ -1,54 +1,26 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal TypeScript starter
-</h1>
+# alesh.com
 
-## 🚀 Quick start
+Source for [alesh.com](https://alesh.com).
 
-1.  **Create a Gatsby site.**
+Migrated from [Gatsby](https://www.gatsbyjs.com/) to [Eleventy (11ty)](https://www.11ty.dev/).
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+## Local
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby
-    ```
+```sh
+pnpm install
+pnpm run dev
+```
 
-2.  **Start developing.**
+## Build
 
-    Navigate into your new site’s directory and start it up.
+```sh
+pnpm run build
+```
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+The static output goes to `public/`.
 
-3.  **Open the code and start customizing!**
+## Notes
 
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.tsx` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+- Page content lives in `src/site/*.md`.
+- Shared layout lives in `src/site/_includes/layout.njk`.
+- Static assets in `static/` are copied through to `public/`.
