@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Elms+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
   --page-ink: #111111;
@@ -31,7 +31,7 @@ body {
   min-height: 100vh;
   margin: 0;
   color: var(--page-ink);
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Elms Sans", sans-serif;
   font-size: 16px;
   line-height: 1.55;
   background: #f1f1ee;
@@ -233,7 +233,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Elms Sans", sans-serif;
   font-weight: 500;
   letter-spacing: 0.01em;
 }
@@ -242,6 +242,7 @@ h1 {
   margin-bottom: 12px;
   font-size: clamp(2.35rem, 5vw, 4rem);
   line-height: 0.95;
+  font-weight: 300;
 }
 
 h2 {
@@ -324,7 +325,7 @@ li {
 
 .section-divider-prefix {
   flex: 0 0 auto;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Elms Sans", sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
 }
