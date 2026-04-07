@@ -8,13 +8,17 @@
     <script type="module" src="/assets/app.js"></script>
   </head>
   <body>
-    <div class="page">
-      <div class="line-numbers">{% lineNumbers %}</div>
-      <main>
-        {{ content | safe }}
-        {% if showCircleLinks %}{% circleLinks %}{% endif %}
+    <div class="mondrian-background" aria-hidden="true">
+      <canvas id="mondrian-canvas"></canvas>
+      <div class="background-wash"></div>
+    </div>
+    <div class="page-shell">
+      <main class="content-panel">
+        <div class="panel-inner">
+          {{ content | safe }}
+          {% footer %}
+        </div>
       </main>
-      {% footer %}
     </div>
   </body>
 </html>

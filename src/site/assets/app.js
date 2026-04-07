@@ -1,5 +1,9 @@
-import { ghostCursor } from "./ghostCursor.js";
+import { initMondrian } from "./mondrian.js";
 
 window.addEventListener("DOMContentLoaded", () => {
-  ghostCursor();
+  const canvas = document.getElementById("mondrian-canvas");
+
+  if (canvas instanceof HTMLCanvasElement) {
+    initMondrian(canvas);
+  }
 });

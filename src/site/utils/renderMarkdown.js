@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+
 function escapeHtml(value) {
   return value
     .replace(/&/g, "&amp;")
@@ -83,6 +86,13 @@ function parseBlocks(markdown) {
       continue;
     }
 
+    const projectsDirective = line.match(/^\[\[projects:(featured|all)\]\]$/);
+    if (projectsDirective) {
+      blocks.push({ type: "projects", mode: projectsDirective[1] });
+      index += 1;
+      continue;
+    }
+
     if (line.match(/^\/\/\s*---\s*$/)) {
       blocks.push({ type: "divider" });
       index += 1;
@@ -160,6 +170,34 @@ function parseBlocks(markdown) {
   return blocks;
 }
 
+function normalizeProjectItem(itemLines) {
+  const normalizedLines = [...itemLines];
+  let featured = false;
+
+  if (normalizedLines[0]) {
+    normalizedLines[0] = normalizedLines[0].replace(/^\[featured\]\s*/i, () => {
+      featured = true;
+      return "";
+    });
+  }
+
+  while (normalizedLines[0] === "") {
+    normalizedLines.shift();
+  }
+
+  return {
+    featured,
+    itemLines: normalizedLines,
+  };
+}
+
+function getProjectItems(markdown) {
+  return parseBlocks(markdown)
+    .filter((block) => block.type === "list")
+    .flatMap((block) => block.items.map(normalizeProjectItem))
+    .filter((item) => item.itemLines.length > 0);
+}
+
 function renderListItem(itemLines) {
   const [firstLine, ...remainingLines] = itemLines;
   const imageMatch = firstLine.match(/^!\[([^\]]*)\]\(([^)]+)\)\s*(.*)$/);
@@ -180,6 +218,27 @@ function renderListItem(itemLines) {
   )}"><div class="project-copy">${parseInline(bodyLines.join(" "))}</div></li>`;
 }
 
+function renderProjectList(markdown, mode = "all") {
+  const items = getProjectItems(markdown).filter((item) =>
+    mode === "featured" ? item.featured : true
+  );
+
+  if (items.length === 0) {
+    return "";
+  }
+
+  return `<ul class="project-list">${items
+    .map((item) => renderListItem(item.itemLines))
+    .join("")}</ul>`;
+}
+
+function readProjectsMarkdown() {
+  return fs.readFileSync(
+    path.join(process.cwd(), "src", "content", "projects.md"),
+    "utf8"
+  );
+}
+
 function renderMarkdown(markdown) {
   return parseBlocks(markdown)
     .map((block) => {
@@ -197,6 +256,10 @@ function renderMarkdown(markdown) {
           .join("")}</ul>`;
       }
 
+      if (block.type === "projects") {
+        return renderProjectList(readProjectsMarkdown(), block.mode);
+      }
+
       if (block.type === "divider") {
         return '<div class="section-divider"><span class="section-divider-prefix">//</span><span class="section-divider-line"></span></div>';
       }
@@ -207,5 +270,7 @@ function renderMarkdown(markdown) {
 }
 
 module.exports = {
+  getProjectItems,
   renderMarkdown,
+  renderProjectList,
 };
