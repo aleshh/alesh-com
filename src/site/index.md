@@ -2,6 +2,7 @@
 layout: layout.njk
 title: Alesh Houdek
 showCircleLinks: true
+hideMainTitle: true
 ---
 
 # Alesh Houdek

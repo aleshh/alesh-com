@@ -17,9 +17,7 @@
     "clean": "node -e \"require('fs').rmSync('public', { recursive: true, force: true })\"",
     "typecheck": "node --check .eleventy.js && node --check src/site/utils/renderMarkdown.js && node --check src/site/assets/app.js && node --check src/site/assets/ghostCursor.js"
   },
-  "dependencies": {
-    "feather-icons": "^4.29.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@11ty/eleventy": "^3.1.5"
   }

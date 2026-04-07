@@ -7,14 +7,25 @@
     <link rel="stylesheet" href="/assets/site.css">
     <script type="module" src="/assets/app.js"></script>
   </head>
-  <body>
-    <div class="page">
-      <div class="line-numbers">{% lineNumbers %}</div>
-      <main>
-        {{ content | safe }}
-        {% if showCircleLinks %}{% circleLinks %}{% endif %}
-      </main>
+  <body id="projects">
+    <a class="site-header-link" href="/">
+      <header class="site-header">
+        <h1>Alesh Houdek</h1>
+      </header>
+    </a>
+
+    <div class="chrome-top">&nbsp;</div>
+    <div class="chrome-bottom">
       {% footer %}
+    </div>
+
+    <div class="site-content">
+      <div class="content-center">
+        <main class="{% if hideMainTitle %}hide-main-title{% endif %}">
+          {{ content | safe }}
+          {% if showCircleLinks %}{% circleLinks %}{% endif %}
+        </main>
+      </div>
     </div>
   </body>
 </html>

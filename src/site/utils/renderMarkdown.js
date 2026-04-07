@@ -11,6 +11,16 @@ function escapeAttribute(value) {
   return escapeHtml(value);
 }
 
+function buildLink(label, href, targetToken) {
+  const target = targetToken ? targetToken.replace(/\\/g, "") : "";
+  const targetAttribute = target ? ` target="${escapeAttribute(target)}"` : "";
+  const relAttribute = target === "_blank" ? ' rel="noreferrer"' : "";
+
+  return `<a href="${escapeAttribute(href)}"${relAttribute}${targetAttribute}>${escapeHtml(
+    label
+  )}</a>`;
+}
+
 function parseInline(markdown) {
   const pattern =
     /<span class="emoji">([\s\S]*?)<\/span>|\[([^\]]+)\]\(([^)]+)\)(?:\{target=(\\?[_a-z]+)\})?/g;
@@ -27,17 +37,7 @@ function parseInline(markdown) {
     if (match[1] !== undefined) {
       html += `<span class="emoji">${escapeHtml(match[1])}</span>`;
     } else if (match[2] !== undefined) {
-      const href = escapeAttribute(match[3]);
-      const target = match[4] ? match[4].replace(/\\/g, "") : "";
-      const targetAttribute = target
-        ? ` target="${escapeAttribute(target)}"`
-        : "";
-      const relAttribute =
-        target === "_blank" ? ' rel="noreferrer"' : "";
-
-      html += `<a href="${href}"${relAttribute}${targetAttribute}>${escapeHtml(
-        match[2]
-      )}</a>`;
+      html += buildLink(match[2], match[3], match[4]);
     }
 
     lastIndex = pattern.lastIndex;
@@ -160,24 +160,42 @@ function parseBlocks(markdown) {
   return blocks;
 }
 
+function renderProjectBody(markdown) {
+  const projectMatch = markdown.match(
+    /^\[([^\]]+)\]\(([^)]+)\)(?:\{target=(\\?[_a-z]+)\})?\s*→\s*([\s\S]+)$/
+  );
+
+  if (!projectMatch) {
+    return `<div class="project-copy">${parseInline(markdown)}</div>`;
+  }
+
+  const [, label, href, targetToken, description] = projectMatch;
+
+  return `<div class="project-copy"><h3>${buildLink(
+    label,
+    href,
+    targetToken
+  )}</h3><p>${parseInline(description)}</p></div>`;
+}
+
 function renderListItem(itemLines) {
   const [firstLine, ...remainingLines] = itemLines;
   const imageMatch = firstLine.match(/^!\[([^\]]*)\]\(([^)]+)\)\s*(.*)$/);
 
   if (!imageMatch) {
-    return `<li class="project-item"><div class="project-copy">${parseInline(
-      itemLines.join(" ")
-    )}</div></li>`;
+    return `<li class="project-item">${renderProjectBody(itemLines.join(
+      " "
+    ))}</li>`;
   }
 
   const [, alt, src, trailingText] = imageMatch;
   const bodyLines = [trailingText, ...remainingLines].filter(Boolean);
 
-  return `<li class="project-item has-image"><img alt="${escapeAttribute(
+  return `<li class="project-item has-image"><div class="project-image"><img alt="${escapeAttribute(
     alt
-  )}" loading="lazy" src="${escapeAttribute(
-    src
-  )}"><div class="project-copy">${parseInline(bodyLines.join(" "))}</div></li>`;
+  )}" loading="lazy" src="${escapeAttribute(src)}"></div>${renderProjectBody(
+    bodyLines.join(" ")
+  )}</li>`;
 }
 
 function renderMarkdown(markdown) {
