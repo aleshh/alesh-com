@@ -13,12 +13,22 @@
       <div class="background-wash"></div>
     </div>
     <div class="page-shell">
-      <main class="content-panel">
+      <main class="content-panel" data-panel>
+        <div class="panel-titlebar" aria-label="Window controls">
+          <div class="panel-stoplights" role="group" aria-label="Window actions">
+            <button class="stoplight stoplight-close" type="button" aria-label="Close window" data-panel-action="close"></button>
+            <button class="stoplight stoplight-minimize" type="button" aria-label="Minimize window" data-panel-action="minimize"></button>
+            <button class="stoplight stoplight-expand" type="button" aria-label="Expand window" data-panel-action="expand"></button>
+          </div>
+        </div>
         <div class="panel-inner">
           {{ content | safe }}
           {% footer %}
         </div>
       </main>
     </div>
+    <button class="panel-dock" type="button" aria-label="Restore window" data-panel-action="restore">
+      <span class="panel-dock-dot"></span>
+    </button>
   </body>
 </html>

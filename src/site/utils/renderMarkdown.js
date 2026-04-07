@@ -203,7 +203,7 @@ function renderListItem(itemLines) {
   const imageMatch = firstLine.match(/^!\[([^\]]*)\]\(([^)]+)\)\s*(.*)$/);
 
   if (!imageMatch) {
-    return `<li class="project-item"><div class="project-copy">${parseInline(
+    return `<li class="project-item"><div class="project-image-frame is-empty" aria-hidden="true"></div><div class="project-copy">${parseInline(
       itemLines.join(" ")
     )}</div></li>`;
   }
@@ -211,11 +211,11 @@ function renderListItem(itemLines) {
   const [, alt, src, trailingText] = imageMatch;
   const bodyLines = [trailingText, ...remainingLines].filter(Boolean);
 
-  return `<li class="project-item has-image"><img alt="${escapeAttribute(
+  return `<li class="project-item has-image"><div class="project-image-frame"><img alt="${escapeAttribute(
     alt
   )}" loading="lazy" src="${escapeAttribute(
     src
-  )}"><div class="project-copy">${parseInline(bodyLines.join(" "))}</div></li>`;
+  )}"></div><div class="project-copy">${parseInline(bodyLines.join(" "))}</div></li>`;
 }
 
 function renderProjectList(markdown, mode = "all") {

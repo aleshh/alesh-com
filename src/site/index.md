@@ -16,6 +16,6 @@ my own when necessary. This quick n dirty website is made with Eleventy.
 
 [[projects:featured]]
 
-[Minor projects and one-off experiments](/more).
+[All projects](/projects) (including lots of very minor stuff).
 
 [Email me](mailto:mail@alesh.com?subject=Mail from alesh.com) if you want to chat. You can also see what this site looked like circa [2016](https://alesh.com/old/) and [2021](http://2021.alesh.com).
