@@ -5,12 +5,16 @@ title: Alesh Houdek
 
 # Alesh Houdek
 
-## I'm a web developer. Mostly React. Not too much.
+## Web developer in Longmont, Colorado
+
+These days I'm mostly building projects with Codex. The background of this page is an experimental Mondrian-style image generator. Try minimizing this window and clicking (and right-clicking) around!
+
+<!-- ## I'm a web developer. Mostly React. Not too much.
 
 I care about <span class="emoji">🚀</span>performance,
 <span class="emoji">🧑‍🦽</span>accessibility, and
 <span class="emoji">🧰</span>clean code. Love working with UX designers but roll
-my own when necessary. This quick n dirty website is made with Eleventy.
+my own when necessary. This quick n dirty website is made with Eleventy. -->
 
 ## A few recent projects
 
