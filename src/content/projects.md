@@ -2,7 +2,7 @@
   [Flipper](https://flipper.fm/){target=\_blank} → An album management and social site. Save albums to stacks, shuffle, select, and open in any streaming service.
 
 - [featured] ![Gtr-scales screenshot](/project-images/gtr-scales.jpg)
-  [Guitar scales](https://gtr-scales.alesh.com) → A guitar scale fingering chart generator for exploring modes, symmetric scales, bebop scales, and other scale families across the fretboard.
+  [Guitar scales](https://projects.alesh.com/guitar/) → A guitar scale fingering chart generator for exploring modes, symmetric scales, bebop scales, and other scale families across the fretboard.
 
 - [featured] [Album Spinner](https://albums.alesh.com/){target=\_blank} → Shows a random album and allows shuffling and opening in Spotify. The interesting bits are the adaptive color palette and the Spotify API integration. Pre-cursor to Flipper!
 
