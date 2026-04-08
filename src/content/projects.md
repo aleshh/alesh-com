@@ -28,20 +28,20 @@
 - ![Gobang screenshot](/project-images/gobang.png)
   [Gobang/Penté](https://projects.alesh.com/gobang/) → One of the first things I built—play Penté (a great game) against the computer.
 
-- ![Mudsling screenshot](/project-images/mudsling.png)
-  [Mudsling](http://mudsling.alesh.com){target=\_blank} → Server-based drink tracking app built with Laravel/PHP. Includes user registration and basic graphic visualizations.
+<!-- - ![Mudsling screenshot](/project-images/mudsling.png)
+  [Mudsling](http://mudsling.alesh.com){target=\_blank} → Server-based drink tracking app built with Laravel/PHP. Includes user registration and basic graphic visualizations. -->
 
-- ![Yglesias Bot screenshot](/project-images/yglesias-bot.jpg)
-  [Yglesias Bot](https://twitter.com/yglesias_bot){target=\_blank} → Node.js Twitter bot that retweets the top 20% of a user's tweets based on number of favorites after 5 minutes
+<!-- - ![Yglesias Bot screenshot](/project-images/yglesias-bot.jpg)
+  [Yglesias Bot](https://twitter.com/yglesias_bot){target=\_blank} → Node.js Twitter bot that retweets the top 20% of a user's tweets based on number of favorites after 5 minutes -->
 
-- ![Zoetrope screenshot](/project-images/zoetrope.png)
-  [Zoetrope](https://projects.alesh.com/zoetrope){target=\_blank} → A responsive, client-side web app providing an interactive front-end to the MediaHound API for searching movies, books, and games.
+<!-- - ![Zoetrope screenshot](/project-images/zoetrope.png)
+  [Zoetrope](https://projects.alesh.com/zoetrope){target=\_blank} → A responsive, client-side web app providing an interactive front-end to the MediaHound API for searching movies, books, and games. -->
 
 - ![WorkoutCalc screenshot](/project-images/workout.png)
   [WorkoutCalc](https://projects.alesh.com/workout){target=\_blank} → Calculates weightlifting sets. Uses a Model/View architecture, and local storage to save workouts between sessions.
 
 - ![1-Step Gallery screenshot](/project-images/gallery.png)
-  [1-Step Gallery](https://projects.alesh.com/1-step-gallery){target=\_blank} → Upload this single file into a directory of images on a web server to auto-generate an image gallery.
+  [1-Step Gallery](https://projects.alesh.com/1-step-gallery){target=\_blank} → Upload [this single file](https://github.com/aleshh/1-step-gallery/blob/master/index.php) into a directory of images on a web server to auto-generate an image gallery.
 
 - ![Switch screenshot](/project-images/switch.png)
   [Switch](https://projects.alesh.com/switch){target=\_blank} → A simple light switch that remembers it's state.
@@ -49,5 +49,5 @@
 - ![Calcy screenshot](/project-images/calcy.png)
   [Calcy](https://projects.alesh.com/calc){target=\_blank} → A text-box input based math parser. Supports basic operations and parenthesees.
 
-- ![Summer Camp Form screenshot](/project-images/summer-camp.png)
-  [Summer Camp Form](https://projects.alesh.com/summer-camp){target=\_blank} → Adds up cost for registration of multiple sessions and other variables, warns about overlapping registrations.
+<!-- - ![Summer Camp Form screenshot](/project-images/summer-camp.png)
+  [Summer Camp Form](https://projects.alesh.com/summer-camp){target=\_blank} → Adds up cost for registration of multiple sessions and other variables, warns about overlapping registrations. -->
