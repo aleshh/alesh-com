@@ -19,22 +19,6 @@ window.addEventListener("DOMContentLoaded", () => {
     document.body.dataset.panelState = nextState;
   };
 
-  const positionPanelAtMidViewport = () => {
-    if (window.scrollY > 2 || window.location.hash) {
-      return;
-    }
-
-    requestAnimationFrame(() => {
-      const naturalTop = panel.getBoundingClientRect().top + window.scrollY;
-      const desiredTop = Math.round(window.innerHeight * 0.5);
-      const targetScroll = Math.max(0, naturalTop - desiredTop);
-
-      if (targetScroll > 0) {
-        window.scrollTo(0, targetScroll);
-      }
-    });
-  };
-
   const scrollPanelIntoView = () => {
     requestAnimationFrame(() => {
       const top = panel.getBoundingClientRect().top + window.scrollY - 30;
@@ -73,6 +57,4 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
-  positionPanelAtMidViewport();
 });
