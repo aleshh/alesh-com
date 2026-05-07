@@ -1,15 +1,18 @@
 - [featured] ![Flipper logo](/project-images/flipper.png)
-  [Flipper](https://flipper.fm/){target=\_blank} → An album management and social site. Save albums to stacks, shuffle, select, and open in any streaming service.
+  [Flipper](https://flipper.fm/){target=\_blank} → An album-focused music discovery and tracking app that lets users organize records they love, rate and review them, and launch playback on their preferred streaming service. It’s designed for people who think in albums rather than playlists, combining personal curation, social discovery, and recommendation features to surface new music aligned with a user’s tastes.
 
-- [featured] ![Gtr-scales screenshot](/project-images/gtr-scales.jpg)
+- [featured] ![ClearPour screenshot](/project-images/clearpour.png)
+  [ClearPour](https://clearpour.app/) → No-judgment drink tracking for iPhone. Tracks alcohol by size and strength, not just drink count, so your log reflects the beer, wine, cocktail, or pour you actually had.
+
+- [featured] ![Gtr-scales screenshot](/project-images/gtr-scales.png)
   [Guitar scales](https://projects.alesh.com/guitar/) → A guitar scale fingering chart generator for exploring modes, symmetric scales, bebop scales, and other scale families across the fretboard.
 
-- [featured] [Album Spinner](https://albums.alesh.com/){target=\_blank} → Shows a random album and allows shuffling and opening in Spotify. The interesting bits are the adaptive color palette and the Spotify API integration. Pre-cursor to Flipper!
+- [Album Spinner](https://albums.alesh.com/){target=\_blank} → Shows a random album and allows shuffling and opening in Spotify. The interesting bits are the adaptive color palette and the Spotify API integration. Pre-cursor to Flipper!
 
 - [featured] ![randoFont screenshot](/project-images/randofont.png)
   [RandoFont](https://randofont.alesh.com){target=\_blank} → Find a font for your next project. Uses the Google Fonts API.
 
-- [featured] [Steno theme for VSCode](https://marketplace.visualstudio.com/items?itemName=alesh-houdek.steno-light-theme){target=\_blank} → Dark mode is [bad](https://tidbits.com/2019/05/31/the-dark-side-of-dark-mode/){target=\_blank}. Green [boosts](https://www.shiftelearning.com/blog/how-do-colors-influence-learning) concentration. Maybe. Anyway, why do you think accountants' steno pads are green?
+- [featured] ![Steno Light screenshot](/project-images/steno-light.png) [Steno theme for VSCode](https://marketplace.visualstudio.com/items?itemName=alesh-houdek.steno-light-theme){target=\_blank} → Dark mode is [bad](https://tidbits.com/2019/05/31/the-dark-side-of-dark-mode/){target=\_blank}. Green [boosts](https://www.shiftelearning.com/blog/how-do-colors-influence-learning) concentration. Maybe. Anyway, why do you think accountants' steno pads are green?
 
 - [Morning Warmup Timer](https://projects.alesh.com/morning-warmup) → Quick app to time a sequence of quick exercises, 1 minute each.
 

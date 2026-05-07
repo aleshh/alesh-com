@@ -80,9 +80,22 @@ li {
 
 .background-wash {
   background:
-    linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.04) 62%, rgba(255, 255, 255, 0.02)),
-    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.05), transparent 38%),
-    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03), transparent 34%);
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.04) 62%,
+      rgba(255, 255, 255, 0.02)
+    ),
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(255, 255, 255, 0.05),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 255, 255, 0.03),
+      transparent 34%
+    );
   pointer-events: none;
 }
 
@@ -215,11 +228,12 @@ li {
 
 .project-item {
   display: grid;
-  grid-template-columns: minmax(0, 190px) minmax(0, 1fr);
-  gap: 22px;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 20px;
   align-items: start;
-  padding: 10px 0 4px;
+  padding: 24px 0;
   border-top: 1px solid var(--hairline);
+  margin-bottom: 0;
 }
 
 .project-item:last-child {
@@ -230,8 +244,8 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 190px;
-  min-height: 0;
+  width: 80px;
+  height: 80px;
   padding: 0;
 }
 
@@ -241,10 +255,12 @@ li {
 
 .project-item img {
   display: block;
-  width: auto;
+  width: 100%;
   max-width: 100%;
-  max-height: 80px;
-  height: auto;
+  max-height: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0 25px 25px 25px;
 }
 
 .project-copy {
@@ -337,11 +353,12 @@ li {
   }
 
   .project-image-frame {
-    width: 100%;
+    width: 80px;
+    height: 80px;
   }
 
   .project-item img {
-    max-width: min(100%, 190px);
+    max-width: 100%;
   }
 }
 
