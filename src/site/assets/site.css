@@ -102,7 +102,7 @@ li {
 .page-shell {
   position: relative;
   z-index: 1;
-  padding: calc(100vh - 48px) 20px 56px;
+  padding: 30px 20px 56px;
   pointer-events: none;
 }
 
@@ -336,7 +336,7 @@ li {
 
 @media (max-width: 760px) {
   .page-shell {
-    padding-top: calc(100vh - 46px);
+    padding-top: 24px;
   }
 
   .panel-titlebar {
@@ -368,7 +368,7 @@ li {
   }
 
   .page-shell {
-    padding: calc(100vh - 44px) 12px 36px;
+    padding: 20px 12px 36px;
   }
 
   .content-panel {
