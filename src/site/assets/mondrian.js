@@ -30,6 +30,28 @@ export function initMondrian(canvas) {
   let resizeTimer = null;
   let root = null;
   let currentFrame = null;
+  let lastViewport = viewport();
+
+  function isCoarsePointerDevice() {
+    return window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+  }
+
+  function shouldResetForResize(nextViewport) {
+    const widthDelta = Math.abs(nextViewport.w - lastViewport.w);
+    const heightDelta = Math.abs(nextViewport.h - lastViewport.h);
+    const orientationChanged =
+      (nextViewport.w > nextViewport.h) !== (lastViewport.w > lastViewport.h);
+
+    if (widthDelta > 2 || orientationChanged) {
+      return true;
+    }
+
+    if (!isCoarsePointerDevice()) {
+      return heightDelta > 2;
+    }
+
+    return heightDelta > 120;
+  }
 
   function render(reset = false) {
     resizeCanvas();
@@ -582,7 +604,16 @@ export function initMondrian(canvas) {
 
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => render(true), 120);
+    resizeTimer = setTimeout(() => {
+      const nextViewport = viewport();
+      const shouldReset = shouldResetForResize(nextViewport);
+
+      lastViewport = nextViewport;
+
+      if (shouldReset) {
+        render(true);
+      }
+    }, 120);
   });
 
   canvas.addEventListener("click", handleLeftClick);
