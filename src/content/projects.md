@@ -5,7 +5,7 @@
   [ClearPour](https://clearpour.app/) → No-judgment drink tracking for iPhone. Tracks alcohol by size and strength, not just drink count, so your log reflects the beer, wine, cocktail, or pour you actually had.
 
 - [featured] ![Gtr-scales screenshot](/project-images/gtr-scales.png)
-  [Guitar scales](https://projects.alesh.com/guitar/) → A guitar scale fingering chart generator for exploring modes, symmetric scales, bebop scales, and other scale families across the fretboard.
+  [IntervalKit](https://projects.alesh.com/intervalkit/) → This started out as a vibe-coded guitar scale fingering chart generator, and has gotten a little out of control.
 
 - [Album Spinner](https://albums.alesh.com/){target=\_blank} → Shows a random album and allows shuffling and opening in Spotify. The interesting bits are the adaptive color palette and the Spotify API integration. Pre-cursor to Flipper!
 
