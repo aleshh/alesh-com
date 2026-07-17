@@ -210,12 +210,27 @@ function renderListItem(itemLines) {
 
   const [, alt, src, trailingText] = imageMatch;
   const bodyLines = [trailingText, ...remainingLines].filter(Boolean);
-
-  return `<li class="project-item has-image"><div class="project-image-frame"><img alt="${escapeAttribute(
-    alt
-  )}" loading="lazy" src="${escapeAttribute(
+  const projectLink = bodyLines
+    .join(" ")
+    .match(/\[([^\]]+)\]\(([^)]+)\)(?:\{target=(\\?[_a-z]+)\})?/);
+  const [, projectName, projectHref, targetValue] = projectLink || [];
+  const target = targetValue ? targetValue.replace(/\\/g, "") : "";
+  const targetAttribute = target ? ` target="${escapeAttribute(target)}"` : "";
+  const relAttribute = target === "_blank" ? ' rel="noreferrer"' : "";
+  const image = `<img alt="${escapeAttribute(alt)}" loading="lazy" src="${escapeAttribute(
     src
-  )}"></div><div class="project-copy">${parseInline(bodyLines.join(" "))}</div></li>`;
+  )}">`;
+  const linkedImage = projectHref
+    ? `<a class="project-image-link" href="${escapeAttribute(
+        projectHref
+      )}"${relAttribute}${targetAttribute} aria-label="Open ${escapeAttribute(
+        projectName
+      )}">${image}</a>`
+    : image;
+
+  return `<li class="project-item has-image"><div class="project-image-frame">${linkedImage}</div><div class="project-copy">${parseInline(
+    bodyLines.join(" ")
+  )}</div></li>`;
 }
 
 function renderProjectList(markdown, mode = "all") {
