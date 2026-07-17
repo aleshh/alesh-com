@@ -15,7 +15,8 @@
     "build": "eleventy",
     "serve": "eleventy --serve",
     "clean": "node -e \"require('fs').rmSync('public', { recursive: true, force: true })\"",
-    "typecheck": "node --check .eleventy.js && node --check src/site/utils/renderMarkdown.js && node --check src/site/assets/app.js && node --check src/site/assets/mondrian.js && node --check src/site/assets/ghostCursor.js"
+    "typecheck": "node --check .eleventy.js && node --check src/site/utils/renderMarkdown.js && node --check src/site/assets/app.js && node --check src/site/assets/mondrian.js && node --check src/site/assets/ghostCursor.js",
+    "deploy": "eleventy && bash scripts/deploy-ftp.sh"
   },
   "dependencies": {},
   "devDependencies": {
