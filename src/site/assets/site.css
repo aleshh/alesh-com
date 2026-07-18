@@ -170,6 +170,10 @@ li {
   margin-bottom: 0;
 }
 
+.panel-resize-handle {
+  display: none;
+}
+
 body[data-panel-state="hidden"] .content-panel {
   display: none;
 }
@@ -365,6 +369,123 @@ li {
 
   .project-item img {
     max-width: 100%;
+  }
+}
+
+@media (min-width: 761px) and (hover: hover) and (pointer: fine) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .page-shell {
+    height: 100dvh;
+    padding: 0;
+  }
+
+  .content-panel {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    width: min(880px, calc(100vw - 40px));
+    height: calc(100dvh - 60px);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-50%);
+  }
+
+  .panel-titlebar {
+    flex: 0 0 auto;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+  }
+
+  .panel-titlebar:active {
+    cursor: grabbing;
+  }
+
+  .panel-inner {
+    min-height: 0;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+
+  .panel-resize-handle {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    touch-action: none;
+  }
+
+  .panel-resize-n,
+  .panel-resize-s {
+    right: 12px;
+    left: 12px;
+    height: 10px;
+  }
+
+  .panel-resize-n {
+    top: 0;
+    cursor: ns-resize;
+  }
+
+  .panel-resize-s {
+    bottom: 0;
+    cursor: ns-resize;
+  }
+
+  .panel-resize-e,
+  .panel-resize-w {
+    top: 12px;
+    bottom: 12px;
+    width: 10px;
+  }
+
+  .panel-resize-e {
+    right: 0;
+    cursor: ew-resize;
+  }
+
+  .panel-resize-w {
+    left: 0;
+    cursor: ew-resize;
+  }
+
+  .panel-resize-ne,
+  .panel-resize-nw,
+  .panel-resize-se,
+  .panel-resize-sw {
+    width: 16px;
+    height: 16px;
+  }
+
+  .panel-resize-ne {
+    top: 0;
+    right: 0;
+    cursor: nesw-resize;
+  }
+
+  .panel-resize-nw {
+    top: 0;
+    left: 0;
+    cursor: nwse-resize;
+  }
+
+  .panel-resize-se {
+    right: 0;
+    bottom: 0;
+    cursor: nwse-resize;
+  }
+
+  .panel-resize-sw {
+    bottom: 0;
+    left: 0;
+    cursor: nesw-resize;
   }
 }
 
